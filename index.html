@@ -98,7 +98,7 @@
     font-size: clamp(16px, 3vw, 22px);
     font-weight: 300;
     font-style: italic;
-    color: var(--muted);
+    color: rgba(212,185,122,0.85);
     margin-bottom: 48px;
     animation: fadeUp 0.8s 0.3s ease both;
   }
@@ -262,7 +262,7 @@
   .sobre-card p {
     font-size: 14px;
     line-height: 1.8;
-    color: var(--muted);
+    color: rgba(247,242,228,0.78);
   }
 
   /* ── STATS ── */
@@ -343,7 +343,7 @@
 
   .dif-content p {
     font-size: 14px;
-    color: var(--muted);
+    color: rgba(247,242,228,0.75);
     line-height: 1.7;
   }
 
@@ -548,33 +548,66 @@
   /* ── CLIENTES ── */
   .clientes { background: var(--dark-mid); }
 
-  .clientes-marquee {
+  .clientes-grid {
     margin-top: 56px;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 
-  .clientes-track {
-    display: flex;
-    gap: 48px;
-    animation: marquee 25s linear infinite;
-    width: max-content;
-  }
-
-  .cliente-pill {
+  .cliente-card {
     background: var(--dark);
-    border: 1px solid rgba(184,154,90,0.15);
-    color: var(--muted);
-    font-size: 13px;
-    padding: 10px 20px;
-    border-radius: 100px;
-    white-space: nowrap;
-    transition: all 0.3s;
+    border: 1px solid rgba(184,154,90,0.1);
+    border-radius: 12px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
   }
 
-  .cliente-pill:hover {
-    border-color: var(--gold);
-    color: var(--gold-light);
+  .cliente-card:hover {
+    border-color: rgba(184,154,90,0.35);
+    transform: translateY(-4px);
+    background: #221C12;
+  }
+
+  .cliente-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1px;
+    border: 2px solid rgba(184,154,90,0.25);
+    flex-shrink: 0;
+  }
+
+  .cliente-handle {
+    font-size: 12px;
+    color: rgba(247,242,228,0.75);
+    font-weight: 400;
+    word-break: break-all;
+    line-height: 1.3;
+  }
+
+  .cliente-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184,154,90,0.08);
+    border: 1px solid rgba(184,154,90,0.2);
+    padding: 3px 10px;
+    border-radius: 100px;
   }
 
   /* ── PASSOS ── */
@@ -775,11 +808,13 @@
     .passos-list::before { display: none; }
     .sobre-card { padding: 28px; }
     .pacote-header, .pacote-body, .pacote-footer { padding-left: 24px; padding-right: 24px; }
+    .clientes-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr 1fr; }
     section { padding: 72px 20px; }
+    .clientes-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   }
 </style>
 </head>
@@ -800,7 +835,7 @@
     </svg>
   </div>
 
-  <h1>MOVARE<br><em>Assistência Virtual</em></h1>
+  <h1>MOVARE<br><em>Assessoria Remota</em></h1>
   <p class="hero-sub">Especialistas no setor de Perfumaria</p>
   <div class="hero-divider"></div>
 
@@ -1053,35 +1088,81 @@
       <p class="section-label">Quem confia na MOVARE</p>
       <h2 class="section-title">Clientes que já<br><em>transformamos</em></h2>
     </div>
-  </div>
 
-  <div class="clientes-marquee" style="margin-top:56px;">
-    <div class="clientes-track">
-      <div class="cliente-pill">@yasminfernandes</div>
-      <div class="cliente-pill">@beatrizcassane</div>
-      <div class="cliente-pill">@lyralibero</div>
-      <div class="cliente-pill">@bruverlingue</div>
-      <div class="cliente-pill">@digilabagencia</div>
-      <div class="cliente-pill">@danibrito</div>
-      <div class="cliente-pill">@glanznaturalbeauty</div>
-      <div class="cliente-pill">@reabilitaemcasa</div>
-      <div class="cliente-pill">@detroit</div>
-      <div class="cliente-pill">@markesan.sites</div>
-      <div class="cliente-pill">@emilynrbr</div>
-      <div class="cliente-pill">@grazi.sa.handmade</div>
-      <!-- repeat for infinite loop -->
-      <div class="cliente-pill">@yasminfernandes</div>
-      <div class="cliente-pill">@beatrizcassane</div>
-      <div class="cliente-pill">@lyralibero</div>
-      <div class="cliente-pill">@bruverlingue</div>
-      <div class="cliente-pill">@digilabagencia</div>
-      <div class="cliente-pill">@danibrito</div>
-      <div class="cliente-pill">@glanznaturalbeauty</div>
-      <div class="cliente-pill">@reabilitaemcasa</div>
-      <div class="cliente-pill">@detroit</div>
-      <div class="cliente-pill">@markesan.sites</div>
-      <div class="cliente-pill">@emilynrbr</div>
-      <div class="cliente-pill">@grazi.sa.handmade</div>
+    <div class="clientes-grid reveal">
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#7B6D8D,#4A3F5C)">YF</div>
+        <span class="cliente-handle">@yasminfernandes</span>
+        <span class="cliente-tag">Nutrição</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#8B5E6A,#5C3040)">BC</div>
+        <span class="cliente-handle">@beatrizcassane</span>
+        <span class="cliente-tag">Saúde</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#6B7F6E,#3D5240)">LL</div>
+        <span class="cliente-handle">@lyralibero</span>
+        <span class="cliente-tag">Consultoria</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#B89A5A,#7A6030)">BV</div>
+        <span class="cliente-handle">@bruverlingue</span>
+        <span class="cliente-tag">Negócios</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#2C3E50,#1A252F)">DL</div>
+        <span class="cliente-handle">@digilabagencia</span>
+        <span class="cliente-tag">Agência</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#8C6D5A,#5A4035)">DB</div>
+        <span class="cliente-handle">@danibrito</span>
+        <span class="cliente-tag">Educação</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#6B8E7A,#3D5C4A)">GN</div>
+        <span class="cliente-handle">@glanznaturalbeauty</span>
+        <span class="cliente-tag">Beleza</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#5B7FA6,#3A5570)">RC</div>
+        <span class="cliente-handle">@reabilitaemcasa</span>
+        <span class="cliente-tag">Saúde</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#C0392B,#7B241C)">DT</div>
+        <span class="cliente-handle">@detroit</span>
+        <span class="cliente-tag">Gastronomia</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#7D6B8A,#4E3F5C)">MS</div>
+        <span class="cliente-handle">@markesan.sites</span>
+        <span class="cliente-tag">Tech</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#A07850,#6A4E30)">EN</div>
+        <span class="cliente-handle">@emilynrbr</span>
+        <span class="cliente-tag">Lifestyle</span>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#7A8C6E,#4A5C3E)">GS</div>
+        <span class="cliente-handle">@grazi.sa.handmade</span>
+        <span class="cliente-tag">Artesanato</span>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1091,7 +1172,7 @@
   <div class="container">
     <div class="reveal">
       <p class="section-label">Como começamos</p>
-      <h2 class="section-title">Próximos passos<br><em>após aceite</em></h2>
+      <h2 class="section-title">Próximos passos<br><em>após aprovação</em></h2>
     </div>
 
     <div class="passos-list reveal">
