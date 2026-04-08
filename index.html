@@ -9,14 +9,14 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream: #F7F2E4;
-    --cream-dark: #EDE6CF;
-    --gold: #B89A5A;
-    --gold-light: #D4B97A;
-    --dark: #1A1410;
-    --dark-mid: #2C2318;
-    --muted: #7A6E5F;
-    --white: #FDFAF3;
+    --cream: #FAF2F3;
+    --cream-dark: #EDDFE1;
+    --red: #A91B2C;
+    --red-light: #D83A4F;
+    --dark: #1A1012;
+    --dark-mid: #2C1A1E;
+    --muted: #856C71;
+    --white: #FDF9FA;
   }
 
   html { scroll-behavior: smooth; }
@@ -38,7 +38,7 @@
     text-align: center;
     position: relative;
     padding: 60px 24px;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, #3a2a14 0%, var(--dark) 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, #3A141A 0%, var(--dark) 70%);
     overflow: hidden;
   }
 
@@ -46,14 +46,14 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B89A5A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A91B2C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 1;
   }
 
   .hero-badge {
     display: inline-block;
-    border: 1px solid rgba(184,154,90,0.4);
-    color: var(--gold-light);
+    border: 1px solid rgba(169,27,44,0.4);
+    color: var(--red-light);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 3px;
@@ -61,7 +61,7 @@
     padding: 8px 20px;
     border-radius: 100px;
     margin-bottom: 36px;
-    background: rgba(184,154,90,0.05);
+    background: rgba(169,27,44,0.05);
     backdrop-filter: blur(10px);
     animation: fadeUp 0.8s ease both;
   }
@@ -90,7 +90,7 @@
 
   .hero h1 em {
     font-style: italic;
-    color: var(--gold-light);
+    color: var(--red-light);
   }
 
   .hero-sub {
@@ -98,7 +98,7 @@
     font-size: clamp(16px, 3vw, 22px);
     font-weight: 300;
     font-style: italic;
-    color: rgba(212,185,122,0.85);
+    color: rgba(216,58,79,0.85);
     margin-bottom: 48px;
     animation: fadeUp 0.8s 0.3s ease both;
   }
@@ -106,7 +106,7 @@
   .hero-divider {
     width: 60px;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    background: linear-gradient(to right, transparent, var(--red), transparent);
     margin: 0 auto 48px;
     animation: fadeUp 0.8s 0.35s ease both;
   }
@@ -115,7 +115,7 @@
     max-width: 560px;
     font-size: 16px;
     line-height: 1.8;
-    color: rgba(247,242,228,0.7);
+    color: rgba(250,242,243,0.7);
     margin-bottom: 52px;
     animation: fadeUp 0.8s 0.4s ease both;
   }
@@ -124,8 +124,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--gold), #9A7D42);
-    color: var(--dark);
+    background: linear-gradient(135deg, var(--red), #85101F);
+    color: #fff;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -139,7 +139,7 @@
 
   .hero-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(184,154,90,0.3);
+    box-shadow: 0 20px 40px rgba(169,27,44,0.3);
   }
 
   .hero-scroll {
@@ -164,7 +164,7 @@
   .scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: linear-gradient(to bottom, var(--red), transparent);
     animation: scrollAnim 2s ease infinite;
   }
 
@@ -178,7 +178,7 @@
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--red);
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -190,7 +190,7 @@
     display: block;
     width: 24px;
     height: 1px;
-    background: var(--gold);
+    background: var(--red);
   }
 
   .section-title {
@@ -202,12 +202,12 @@
     margin-bottom: 20px;
   }
 
-  .section-title em { font-style: italic; color: var(--gold-light); }
+  .section-title em { font-style: italic; color: var(--red-light); }
 
   .section-body {
     font-size: 16px;
     line-height: 1.85;
-    color: rgba(247,242,228,0.65);
+    color: rgba(250,242,243,0.65);
     max-width: 620px;
   }
 
@@ -229,7 +229,7 @@
     transition: background 0.3s;
   }
 
-  .sobre-card:hover { background: #352B1E; }
+  .sobre-card:hover { background: #351E23; }
 
   .sobre-card::after {
     content: '';
@@ -238,7 +238,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(to right, var(--gold), transparent);
+    background: linear-gradient(to right, var(--red), transparent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -262,14 +262,14 @@
   .sobre-card p {
     font-size: 14px;
     line-height: 1.8;
-    color: rgba(247,242,228,0.78);
+    color: rgba(250,242,243,0.78);
   }
 
   /* ── STATS ── */
   .stats {
-    background: linear-gradient(135deg, #261d10, #1A1410);
-    border-top: 1px solid rgba(184,154,90,0.15);
-    border-bottom: 1px solid rgba(184,154,90,0.15);
+    background: linear-gradient(135deg, #261418, #1A1012);
+    border-top: 1px solid rgba(169,27,44,0.15);
+    border-bottom: 1px solid rgba(169,27,44,0.15);
     padding: 80px 24px;
   }
 
@@ -277,11 +277,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
-    background: rgba(184,154,90,0.1);
+    background: rgba(169,27,44,0.1);
   }
 
   .stat-item {
-    background: #1A1410;
+    background: #1A1012;
     padding: 40px 24px;
     text-align: center;
   }
@@ -290,7 +290,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 52px;
     font-weight: 300;
-    color: var(--gold-light);
+    color: var(--red-light);
     line-height: 1;
     margin-bottom: 8px;
   }
@@ -322,13 +322,13 @@
     cursor: default;
   }
 
-  .dif-item:hover { background: #221C12; }
+  .dif-item:hover { background: #221417; }
 
   .dif-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
     font-weight: 300;
-    color: rgba(184,154,90,0.2);
+    color: rgba(169,27,44,0.2);
     min-width: 56px;
     line-height: 1;
   }
@@ -343,13 +343,13 @@
 
   .dif-content p {
     font-size: 14px;
-    color: rgba(247,242,228,0.75);
+    color: rgba(250,242,243,0.75);
     line-height: 1.7;
   }
 
   .dif-icon {
     margin-left: auto;
-    color: var(--gold);
+    color: var(--red);
     font-size: 20px;
     opacity: 0.6;
   }
@@ -376,16 +376,16 @@
   .pacote-card:hover { transform: translateY(-4px); }
 
   .pacote-card.destaque {
-    background: #2D2213;
-    border: 1px solid rgba(184,154,90,0.3);
+    background: #2D1A1E;
+    border: 1px solid rgba(169,27,44,0.3);
   }
 
   .pacote-tag {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: var(--gold);
-    color: var(--dark);
+    background: var(--red);
+    color: #fff;
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -396,14 +396,14 @@
 
   .pacote-header {
     padding: 40px 36px 28px;
-    border-bottom: 1px solid rgba(184,154,90,0.1);
+    border-bottom: 1px solid rgba(169,27,44,0.1);
   }
 
   .pacote-tier {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--red);
     margin-bottom: 12px;
   }
 
@@ -443,9 +443,9 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(184,154,90,0.1);
-    border: 1px solid rgba(184,154,90,0.2);
-    color: var(--gold-light);
+    background: rgba(169,27,44,0.1);
+    border: 1px solid rgba(169,27,44,0.2);
+    color: var(--red-light);
     font-size: 12px;
     padding: 6px 14px;
     border-radius: 100px;
@@ -478,13 +478,13 @@
     align-items: flex-start;
     gap: 12px;
     font-size: 14px;
-    color: rgba(247,242,228,0.75);
+    color: rgba(250,242,243,0.75);
     line-height: 1.5;
   }
 
   .pacote-features li::before {
     content: '◆';
-    color: var(--gold);
+    color: var(--red);
     font-size: 8px;
     margin-top: 5px;
     flex-shrink: 0;
@@ -509,7 +509,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 300;
-    color: rgba(247,242,228,0.4);
+    color: rgba(250,242,243,0.4);
     text-decoration: line-through;
   }
 
@@ -521,8 +521,8 @@
     display: block;
     text-align: center;
     background: transparent;
-    border: 1px solid rgba(184,154,90,0.4);
-    color: var(--gold-light);
+    border: 1px solid rgba(169,27,44,0.4);
+    color: var(--red-light);
     font-size: 13px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -533,15 +533,15 @@
   }
 
   .btn-proposta:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--dark);
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
   }
 
   .pacote-card.destaque .btn-proposta {
-    background: linear-gradient(135deg, var(--gold), #9A7D42);
+    background: linear-gradient(135deg, var(--red), #85101F);
     border-color: transparent;
-    color: var(--dark);
+    color: #fff;
     font-weight: 500;
   }
 
@@ -557,7 +557,7 @@
 
   .cliente-card {
     background: var(--dark);
-    border: 1px solid rgba(184,154,90,0.1);
+    border: 1px solid rgba(169,27,44,0.1);
     border-radius: 12px;
     padding: 24px 16px;
     display: flex;
@@ -570,9 +570,9 @@
   }
 
   .cliente-card:hover {
-    border-color: rgba(184,154,90,0.35);
+    border-color: rgba(169,27,44,0.35);
     transform: translateY(-4px);
-    background: #221C12;
+    background: #221417;
   }
 
   .cliente-avatar {
@@ -587,13 +587,13 @@
     font-weight: 600;
     color: rgba(255,255,255,0.9);
     letter-spacing: 1px;
-    border: 2px solid rgba(184,154,90,0.25);
+    border: 2px solid rgba(169,27,44,0.25);
     flex-shrink: 0;
   }
 
   .cliente-handle {
     font-size: 12px;
-    color: rgba(247,242,228,0.75);
+    color: rgba(250,242,243,0.75);
     font-weight: 400;
     word-break: break-all;
     line-height: 1.3;
@@ -603,9 +603,9 @@
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gold);
-    background: rgba(184,154,90,0.08);
-    border: 1px solid rgba(184,154,90,0.2);
+    color: var(--red);
+    background: rgba(169,27,44,0.08);
+    border: 1px solid rgba(169,27,44,0.2);
     padding: 3px 10px;
     border-radius: 100px;
   }
@@ -625,7 +625,7 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: linear-gradient(to bottom, var(--red), transparent);
   }
 
   .passo-item {
@@ -640,14 +640,14 @@
     height: 56px;
     border-radius: 50%;
     background: var(--dark-mid);
-    border: 1px solid rgba(184,154,90,0.3);
+    border: 1px solid rgba(169,27,44,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
-    color: var(--gold);
+    color: var(--red);
     position: relative;
     z-index: 1;
   }
@@ -673,9 +673,9 @@
 
   /* ── CTA FINAL ── */
   .cta-final {
-    background: linear-gradient(135deg, #2D2213, #1A1410);
+    background: linear-gradient(135deg, #2D1A1E, #1A1012);
     text-align: center;
-    border-top: 1px solid rgba(184,154,90,0.15);
+    border-top: 1px solid rgba(169,27,44,0.15);
     padding: 120px 24px;
   }
 
@@ -688,7 +688,7 @@
     line-height: 1.1;
   }
 
-  .cta-final h2 em { font-style: italic; color: var(--gold-light); }
+  .cta-final h2 em { font-style: italic; color: var(--red-light); }
 
   .cta-final p {
     font-size: 16px;
@@ -728,8 +728,8 @@
     align-items: center;
     gap: 10px;
     background: transparent;
-    border: 1px solid rgba(184,154,90,0.4);
-    color: var(--gold-light);
+    border: 1px solid rgba(169,27,44,0.4);
+    color: var(--red-light);
     font-size: 14px;
     font-weight: 500;
     padding: 16px 32px;
@@ -739,37 +739,37 @@
   }
 
   .btn-insta:hover {
-    background: rgba(184,154,90,0.1);
-    border-color: var(--gold);
+    background: rgba(169,27,44,0.1);
+    border-color: var(--red);
   }
 
   .garantia {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid rgba(184,154,90,0.2);
+    border: 1px solid rgba(169,27,44,0.2);
     padding: 14px 28px;
     border-radius: 100px;
     font-size: 13px;
     color: var(--muted);
   }
 
-  .garantia span { color: var(--gold); }
+  .garantia span { color: var(--red); }
 
   /* ── FOOTER ── */
   footer {
-    background: #0F0C09;
+    background: #0F0A0B;
     padding: 48px 24px;
     text-align: center;
-    border-top: 1px solid rgba(184,154,90,0.08);
+    border-top: 1px solid rgba(169,27,44,0.08);
   }
 
   footer p {
     font-size: 13px;
-    color: rgba(122,110,95,0.5);
+    color: rgba(133,108,113,0.5);
   }
 
-  footer strong { color: var(--gold); }
+  footer strong { color: var(--red); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -820,18 +820,17 @@
 </head>
 <body>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-badge">Proposta Exclusiva · Setor de Perfumaria</div>
 
   <div class="hero-logo">
     <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="26" cy="26" r="25" stroke="#B89A5A" stroke-width="1"/>
-      <line x1="26" y1="2" x2="26" y2="50" stroke="#B89A5A" stroke-width="0.8"/>
-      <line x1="2" y1="26" x2="50" y2="26" stroke="#B89A5A" stroke-width="0.8"/>
-      <line x1="8" y1="8" x2="44" y2="44" stroke="#B89A5A" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <line x1="44" y1="8" x2="8" y2="44" stroke="#B89A5A" stroke-width="0.5" stroke-dasharray="2 3"/>
-      <polygon points="26,4 28,24 26,22 24,24" fill="#B89A5A"/>
+      <circle cx="26" cy="26" r="25" stroke="#A91B2C" stroke-width="1"/>
+      <line x1="26" y1="2" x2="26" y2="50" stroke="#A91B2C" stroke-width="0.8"/>
+      <line x1="2" y1="26" x2="50" y2="26" stroke="#A91B2C" stroke-width="0.8"/>
+      <line x1="8" y1="8" x2="44" y2="44" stroke="#A91B2C" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <line x1="44" y1="8" x2="8" y2="44" stroke="#A91B2C" stroke-width="0.5" stroke-dasharray="2 3"/>
+      <polygon points="26,4 28,24 26,22 24,24" fill="#A91B2C"/>
     </svg>
   </div>
 
@@ -854,7 +853,6 @@
   </div>
 </section>
 
-<!-- ── SOBRE ── -->
 <section class="sobre">
   <div class="container">
     <div class="reveal">
@@ -890,7 +888,6 @@
   </div>
 </section>
 
-<!-- ── STATS ── -->
 <div class="stats">
   <div class="container">
     <div class="stats-grid reveal">
@@ -914,7 +911,6 @@
   </div>
 </div>
 
-<!-- ── DIFERENCIAIS ── -->
 <section class="diferenciais">
   <div class="container">
     <div class="reveal">
@@ -959,7 +955,6 @@
   </div>
 </section>
 
-<!-- ── PACOTES ── -->
 <section class="pacotes" id="pacotes">
   <div class="container">
     <div class="reveal">
@@ -970,7 +965,6 @@
 
     <div class="pacotes-grid reveal">
 
-      <!-- MASTIGE -->
       <div class="pacote-card">
         <div class="pacote-header">
           <p class="pacote-tier">🥉 Pacote</p>
@@ -1006,7 +1000,6 @@
         </div>
       </div>
 
-      <!-- GRIFE -->
       <div class="pacote-card destaque">
         <div class="pacote-tag">Mais completo</div>
         <div class="pacote-header">
@@ -1042,7 +1035,6 @@
         </div>
       </div>
 
-      <!-- NICHO -->
       <div class="pacote-card">
         <div class="pacote-header">
           <p class="pacote-tier">🥇 Pacote</p>
@@ -1081,7 +1073,6 @@
   </div>
 </section>
 
-<!-- ── CLIENTES ── -->
 <section class="clientes">
   <div class="container">
     <div class="reveal">
@@ -1110,7 +1101,7 @@
       </div>
 
       <div class="cliente-card">
-        <div class="cliente-avatar" style="background:linear-gradient(135deg,#B89A5A,#7A6030)">BV</div>
+        <div class="cliente-avatar" style="background:linear-gradient(135deg,#A91B2C,#75121E)">BV</div>
         <span class="cliente-handle">@clinicanutravita</span>
         <span class="cliente-tag">Pediatria</span>
       </div>
@@ -1167,7 +1158,6 @@
   </div>
 </section>
 
-<!-- ── PRÓXIMOS PASSOS ── -->
 <section class="passos">
   <div class="container">
     <div class="reveal">
@@ -1222,7 +1212,6 @@
   </div>
 </section>
 
-<!-- ── CTA FINAL ── -->
 <section class="cta-final">
   <div class="container reveal">
     <h2>Vamos crescer<br><em>o seu negócio?</em></h2>
