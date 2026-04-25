@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOVARE — Proposta Exclusiva | Perfumaria</title>
+<title>MOVARE — Assessoria para Perfumarias</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -302,6 +302,28 @@
     text-transform: uppercase;
   }
 
+  /* ── ESPELHO DA DOR (PERFUMARIA) ── */
+  .dor { background: var(--dark-mid); }
+  .dor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 56px;
+  }
+  .dor-card {
+    background: var(--dark);
+    padding: 36px;
+    transition: background 0.3s;
+  }
+  .dor-card:hover { background: #221417; }
+  .dor-card-icon { font-size: 28px; margin-bottom: 14px; }
+  .dor-card p {
+    font-size: 14px;
+    color: rgba(250,242,243,0.7);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
   /* ── DIFERENCIAIS ── */
   .diferenciais { background: var(--dark-mid); }
 
@@ -354,12 +376,72 @@
     opacity: 0.6;
   }
 
+  /* ── SERVIÇOS ── */
+  .servicos { background: var(--dark); }
+  .servicos-list {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .servico-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 40px;
+    background: var(--dark-mid);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .servico-item:hover { background: #351E23; }
+  .servico-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: rgba(169,27,44,0.2);
+    min-width: 56px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .servico-content { flex: 1; }
+  .servico-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .servico-content p {
+    font-size: 14px;
+    color: rgba(250,242,243,0.75);
+    line-height: 1.7;
+  }
+  .servico-highlight {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--red-light);
+    background: rgba(169,27,44,0.08);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+  .servico-icon {
+    margin-left: auto;
+    color: var(--red);
+    font-size: 20px;
+    opacity: 0.6;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
   /* ── PACOTES ── */
   .pacotes { background: var(--dark); }
 
   .pacotes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     margin-top: 64px;
   }
@@ -380,6 +462,11 @@
     border: 1px solid rgba(169,27,44,0.3);
   }
 
+  .pacote-card.personalizado {
+    border: 1px dashed rgba(169,27,44,0.35);
+    background: transparent;
+  }
+
   .pacote-tag {
     position: absolute;
     top: 20px;
@@ -392,6 +479,7 @@
     text-transform: uppercase;
     padding: 5px 12px;
     border-radius: 100px;
+    z-index: 1;
   }
 
   .pacote-header {
@@ -545,6 +633,15 @@
     font-weight: 500;
   }
 
+  .pacote-card.personalizado .btn-proposta {
+    border: 1px solid var(--red);
+    color: var(--red);
+  }
+  .pacote-card.personalizado .btn-proposta:hover {
+    background: var(--red);
+    color: #fff;
+  }
+
   /* ── CLIENTES ── */
   .clientes { background: var(--dark-mid); }
 
@@ -677,7 +774,18 @@
     text-align: center;
     border-top: 1px solid rgba(169,27,44,0.15);
     padding: 120px 24px;
+    position: relative;
+    overflow: hidden;
   }
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A91B2C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+  .cta-final > * { position: relative; z-index: 1; }
 
   .cta-final h2 {
     font-family: 'Cormorant Garamond', serif;
@@ -782,11 +890,6 @@
     50% { opacity: 0.3; transform: scaleY(0.5); }
   }
 
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -799,18 +902,19 @@
   }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .pacotes-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
-    .sobre-grid { grid-template-columns: 1fr; }
+    .sobre-grid, .dor-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .pacotes-grid { grid-template-columns: 1fr; }
-    .dif-item { flex-direction: column; gap: 16px; }
-    .dif-icon { display: none; }
+    .dif-item, .servico-item { flex-direction: column; gap: 16px; }
+    .dif-icon, .servico-icon { display: none; }
     .passos-list::before { display: none; }
-    .sobre-card { padding: 28px; }
-    .pacote-header, .pacote-body, .pacote-footer { padding-left: 24px; padding-right: 24px; }
+    .sobre-card, .pacote-header, .pacote-body, .pacote-footer { padding-left: 24px; padding-right: 24px; }
     .clientes-grid { grid-template-columns: repeat(2, 1fr); }
   }
-
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr 1fr; }
     section { padding: 72px 20px; }
@@ -820,8 +924,9 @@
 </head>
 <body>
 
+<!-- ====== HERO ====== -->
 <section class="hero">
-  <div class="hero-badge">Proposta Exclusiva · Setor de Perfumaria</div>
+  <div class="hero-badge">Assessoria para Perfumarias</div>
 
   <div class="hero-logo">
     <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -839,7 +944,7 @@
   <div class="hero-divider"></div>
 
   <p class="hero-intro">
-    Preparamos esta proposta exclusiva para mostrar como a MOVARE pode transformar o atendimento da sua perfumaria — com humanização, especialização no nicho e resultados mensuráveis.
+    Seu WhatsApp vive cheio de clientes pedindo indicação de fragrância e você não dá conta de responder? A MOVARE assume o atendimento da sua perfumaria com conhecimento sensorial, follow-up ativo e pós-venda humanizado — você vende mais e respira.
   </p>
 
   <a href="#pacotes" class="hero-cta">
@@ -852,6 +957,35 @@
    </div>
 </section>
 
+<!-- ====== ESPELHO DA DOR (PERFUMARIA) ====== -->
+<section class="dor">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Isso está acontecendo na sua perfumaria?</p>
+      <h2 class="section-title">Reconhece <em>esta situação?</em></h2>
+    </div>
+    <div class="dor-grid reveal">
+      <div class="dor-card">
+        <div class="dor-card-icon">📱</div>
+        <p>"Meu WhatsApp não para. Clientes pedindo indicação de perfume, orçamento, rastreio — e eu sozinha para dar conta de tudo."</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-card-icon">🌸</div>
+        <p>"Vender fragrância exige conhecimento sensorial. Não é só digitar preço — é traduzir notas olfativas, sugestões e combinações. Isso toma tempo e energia."</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-card-icon">📦</div>
+        <p>"Trocas, devoluções, rastreio de encomendas. O pós-venda vira uma bola de neve e eu deixo de prospectar novos clientes para apagar incêndio."</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-card-icon">💸</div>
+        <p>"Carrinho abandonado, cliente que some depois do orçamento, follow-up que não existe. Sei que estou perdendo vendas, mas não tenho braço para recuperar."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SOBRE ====== -->
 <section class="sobre">
   <div class="container">
     <div class="reveal">
@@ -887,6 +1021,7 @@
   </div>
 </section>
 
+<!-- ====== STATS ====== -->
 <div class="stats">
   <div class="container">
     <div class="stats-grid reveal">
@@ -908,8 +1043,71 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
+<!-- ====== SERVIÇOS ====== -->
+<section class="servicos">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">O que está incluso</p>
+      <h2 class="section-title">Serviços de <em>Assessoria para Perfumaria</em></h2>
+    </div>
+
+    <div class="servicos-list reveal">
+      <div class="servico-item">
+        <div class="servico-num">01</div>
+        <div class="servico-content">
+          <h3>Atendimento Consultivo no WhatsApp</h3>
+          <p>Triagem de mensagens, sugestão de fragrâncias com linguagem sensorial e envio de orçamentos e links de pagamento. Seu cliente é atendido por quem entende de perfume — você só entra na conversa quando for realmente necessário.</p>
+          <span class="servico-highlight">Linguagem sensorial</span>
+        </div>
+        <div class="servico-icon">◆</div>
+      </div>
+
+      <div class="servico-item">
+        <div class="servico-num">02</div>
+        <div class="servico-content">
+          <h3>Follow-up Ativo e Recuperação de Vendas</h3>
+          <p>Carrinho abandonado? Orçamento sem resposta? Nossa equipe faz follow-up estratégico e respeitoso para recuperar vendas que estavam paradas — sem insistência, com inteligência.</p>
+          <span class="servico-highlight">Recuperação de carrinho</span>
+        </div>
+        <div class="servico-icon">◆</div>
+      </div>
+
+      <div class="servico-item">
+        <div class="servico-num">03</div>
+        <div class="servico-content">
+          <h3>Pós-Venda Humanizado</h3>
+          <p>Confirmação de entrega, pesquisa de satisfação, contato com ex-clientes para recompra. Transformamos cada venda em relacionamento — e relacionamento em recorrência.</p>
+          <span class="servico-highlight">Fidelização de clientes</span>
+        </div>
+        <div class="servico-icon">◆</div>
+      </div>
+
+      <div class="servico-item">
+        <div class="servico-num">04</div>
+        <div class="servico-content">
+          <h3>Gestão de Trocas e Devoluções</h3>
+          <p>Cuidamos de todo o processo: do primeiro contato do cliente insatisfeito até a solução final. Trocas, devoluções e estornos gerenciados com agilidade — preservando sua reputação.</p>
+          <span class="servico-highlight">Preserva sua reputação</span>
+        </div>
+        <div class="servico-icon">◆</div>
+      </div>
+
+      <div class="servico-item">
+        <div class="servico-num">05</div>
+        <div class="servico-content">
+          <h3>Relatórios Mensais de Atendimento</h3>
+          <p>Relatório claro com volume de atendimentos, taxa de conversão, tickets médios e motivos de desistência. Você acompanha resultados reais — não acha que está vendendo bem, sabe.</p>
+          <span class="servico-highlight">Dados reais de conversão</span>
+        </div>
+        <div class="servico-icon">◆</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIFERENCIAIS ====== -->
 <section class="diferenciais">
   <div class="container">
     <div class="reveal">
@@ -922,7 +1120,7 @@
         <div class="dif-num">01</div>
         <div class="dif-content">
           <h3>Equipe Qualificada & Certificada</h3>
-          <p>2 profissionais dedicados ao seu negócio — uma responsável pelos processos administrativos e um responsável pela experiência do cliente. Equipe certificada pela LGPD e treinada especificamente para o setor de perfumaria.</p>
+          <p>2 profissionais dedicados ao seu negócio — uma responsável pelos processos administrativos e uma responsável pela experiência do cliente. Equipe certificada pela LGPD e treinada especificamente para o setor de perfumaria.</p>
         </div>
         <div class="dif-icon">◆</div>
       </div>
@@ -954,16 +1152,18 @@
   </div>
 </section>
 
+<!-- ====== PACOTES ====== -->
 <section class="pacotes" id="pacotes">
   <div class="container">
     <div class="reveal">
       <p class="section-label">Investimento</p>
       <h2 class="section-title">Escolha o pacote<br><em>ideal para você</em></h2>
-      <p class="section-body">Todos os pacotes incluem 2 profissionais dedicados, equipe especialista no setor, emissão de NF e economia real comparada à contratação CLT.</p>
+      <p class="section-body">Todos os pacotes incluem 2 profissionais dedicados, equipe especialista no setor, emissão de NF e economia real comparada à contratação CLT. Não encontrou o que precisa? Temos também plano personalizado.</p>
     </div>
 
     <div class="pacotes-grid reveal">
 
+      <!-- PACOTE MASTIGE -->
       <div class="pacote-card">
         <div class="pacote-header">
           <p class="pacote-tier">🥉 Pacote</p>
@@ -999,6 +1199,7 @@
         </div>
       </div>
 
+      <!-- PACOTE GRIFE (DESTAQUE) -->
       <div class="pacote-card destaque">
         <div class="pacote-tag">Mais completo</div>
         <div class="pacote-header">
@@ -1034,6 +1235,7 @@
         </div>
       </div>
 
+      <!-- PACOTE NICHO -->
       <div class="pacote-card">
         <div class="pacote-header">
           <p class="pacote-tier">🥇 Pacote</p>
@@ -1068,10 +1270,37 @@
         </div>
       </div>
 
+      <!-- PLANO PERSONALIZADO -->
+      <div class="pacote-card personalizado">
+        <div class="pacote-header">
+          <p class="pacote-tier">✨ Plano</p>
+          <h3 class="pacote-name">Sob Medida</h3>
+          <div class="pacote-price">
+            <span class="price-value" style="font-size:26px;">Você decide</span>
+          </div>
+        </div>
+        <div class="pacote-body">
+          <h4>Ideal para você que:</h4>
+          <ul class="pacote-features">
+            <li>Precisa de um escopo diferente dos pacotes prontos</li>
+            <li>Quer combinar serviços específicos dos três planos</li>
+            <li>Tem demandas sazonais ou horários alternativos</li>
+            <li>Busca integrar sistemas que já utiliza na sua perfumaria</li>
+          </ul>
+          <p style="font-size:13px; color:rgba(250,242,243,0.55); line-height:1.8; margin-top:12px;">
+            Monte seu plano com a gente. Envie sua demanda e em até 24h você recebe uma proposta ajustada, sem compromisso.
+          </p>
+        </div>
+        <div class="pacote-footer">
+          <a href="https://wa.me/55" class="btn-proposta">Pedir orçamento personalizado</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- ====== CLIENTES ====== -->
 <section class="clientes">
   <div class="container">
     <div class="reveal">
@@ -1157,6 +1386,7 @@
   </div>
 </section>
 
+<!-- ====== PASSOS ====== -->
 <section class="passos">
   <div class="container">
     <div class="reveal">
@@ -1211,10 +1441,11 @@
   </div>
 </section>
 
+<!-- ====== CTA FINAL ====== -->
 <section class="cta-final">
   <div class="container reveal">
     <h2>Vamos crescer<br><em>o seu negócio?</em></h2>
-    <p>Escolha seu pacote e comece a transformar o atendimento da sua perfumaria ainda esta semana.</p>
+    <p>Escolha seu pacote ou peça um plano personalizado — a transformação do atendimento da sua perfumaria começa ainda esta semana.</p>
 
     <div class="cta-buttons">
       <a href="https://wa.me/55" class="btn-whats">
@@ -1239,7 +1470,6 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
