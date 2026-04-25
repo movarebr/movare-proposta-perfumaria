@@ -38,7 +38,7 @@
     text-align: center;
     position: relative;
     padding: 60px 24px;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, #3A141A 0%, var(--dark) 70%);
+    background: radial-gradient(ellipse 80% 65% at 50% 0%, #3A141A 0%, var(--dark) 65%);
     overflow: hidden;
   }
 
@@ -52,7 +52,7 @@
 
   .hero-badge {
     display: inline-block;
-    border: 1px solid rgba(169,27,44,0.4);
+    border: 1px solid rgba(169,27,44,0.85);
     color: var(--red-light);
     font-size: 11px;
     font-weight: 500;
@@ -61,7 +61,7 @@
     padding: 8px 20px;
     border-radius: 100px;
     margin-bottom: 36px;
-    background: rgba(169,27,44,0.05);
+    background: rgba(169,27,44,0.18);
     backdrop-filter: blur(10px);
     animation: fadeUp 0.8s ease both;
   }
@@ -104,17 +104,19 @@
   }
 
   .hero-divider {
-    width: 60px;
+    width: 90px;
     height: 1px;
     background: linear-gradient(to right, transparent, var(--red), transparent);
     margin: 0 auto 48px;
+    opacity: 0.9;
     animation: fadeUp 0.8s 0.35s ease both;
   }
 
   .hero-intro {
     max-width: 560px;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 2.0;
+    letter-spacing: 0.02em;
     color: rgba(250,242,243,0.7);
     margin-bottom: 52px;
     animation: fadeUp 0.8s 0.4s ease both;
@@ -212,7 +214,7 @@
   }
 
   /* ── SOBRE ── */
-  .sobre { background: var(--dark); }
+  .sobre { background: #111418; }
 
   .sobre-grid {
     display: grid;
@@ -224,6 +226,7 @@
   .sobre-card {
     background: var(--dark-mid);
     padding: 40px;
+    border-radius: 8px;
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
@@ -244,7 +247,25 @@
     transition: transform 0.4s ease;
   }
 
+  .sobre-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+  }
+
   .sobre-card:hover::after { transform: scaleX(1); }
+  .sobre-card:hover::before { transform: scaleY(1); }
+
+  .sobre-card.destaque-perfumaria {
+    border: 1px solid rgba(169,27,44,0.2);
+  }
 
   .sobre-card-icon {
     font-size: 28px;
@@ -277,7 +298,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
-    background: rgba(169,27,44,0.1);
+    background: rgba(169,27,44,0.3);
   }
 
   .stat-item {
@@ -290,10 +311,12 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 52px;
     font-weight: 300;
-    color: var(--red-light);
     line-height: 1;
     margin-bottom: 8px;
   }
+
+  .stat-num.gold { color: #C9A84C; }
+  .stat-num.light { color: var(--red-light); }
 
   .stat-label {
     font-size: 12px;
@@ -303,7 +326,7 @@
   }
 
   /* ── ESPELHO DA DOR (PERFUMARIA) ── */
-  .dor { background: var(--dark-mid); }
+  .dor { background: #1C2028; }
   .dor-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -312,20 +335,21 @@
   }
   .dor-card {
     background: var(--dark);
-    padding: 36px;
+    padding: 40px 44px;
     transition: background 0.3s;
   }
   .dor-card:hover { background: #221417; }
-  .dor-card-icon { font-size: 28px; margin-bottom: 14px; }
+  .dor-card-icon { font-size: 32px; margin-bottom: 18px; }
   .dor-card p {
-    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 20px);
     color: rgba(250,242,243,0.7);
     line-height: 1.7;
     font-style: italic;
   }
 
   /* ── DIFERENCIAIS ── */
-  .diferenciais { background: var(--dark-mid); }
+  .diferenciais { background: #111418; }
 
   .dif-list {
     margin-top: 64px;
@@ -345,6 +369,14 @@
   }
 
   .dif-item:hover { background: #221417; }
+
+  .dif-item.destaque-dif {
+    border-left: 3px solid var(--red);
+  }
+
+  .dif-item.destaque-dif .dif-content h3 {
+    color: #E0C070;
+  }
 
   .dif-num {
     font-family: 'Cormorant Garamond', serif;
@@ -369,6 +401,11 @@
     line-height: 1.7;
   }
 
+  .dif-content .destaque-num {
+    font-weight: 500;
+    color: #C9A84C;
+  }
+
   .dif-icon {
     margin-left: auto;
     color: var(--red);
@@ -377,7 +414,7 @@
   }
 
   /* ── SERVIÇOS ── */
-  .servicos { background: var(--dark); }
+  .servicos { background: #1C2028; }
   .servicos-list {
     margin-top: 64px;
     display: flex;
@@ -398,7 +435,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
     font-weight: 300;
-    color: rgba(169,27,44,0.2);
+    color: rgba(169,27,44,0.4);
     min-width: 56px;
     line-height: 1;
     flex-shrink: 0;
@@ -424,6 +461,7 @@
     text-transform: uppercase;
     color: var(--red-light);
     background: rgba(169,27,44,0.08);
+    border: 1px solid rgba(169,27,44,0.5);
     padding: 4px 12px;
     border-radius: 100px;
   }
@@ -431,13 +469,13 @@
     margin-left: auto;
     color: var(--red);
     font-size: 20px;
-    opacity: 0.6;
+    opacity: 0.9;
     flex-shrink: 0;
     align-self: center;
   }
 
   /* ── PACOTES ── */
-  .pacotes { background: var(--dark); }
+  .pacotes { background: linear-gradient(180deg, #111418, #16141a); }
 
   .pacotes-grid {
     display: grid;
@@ -460,10 +498,11 @@
   .pacote-card.destaque {
     background: #2D1A1E;
     border: 1px solid rgba(169,27,44,0.3);
+    box-shadow: 0 8px 48px rgba(201,168,76,0.12);
   }
 
   .pacote-card.personalizado {
-    border: 1px dashed rgba(169,27,44,0.35);
+    border: 1px dashed rgba(169,27,44,0.3);
     background: transparent;
   }
 
@@ -471,8 +510,6 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background: var(--red);
-    color: #fff;
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -480,11 +517,20 @@
     padding: 5px 12px;
     border-radius: 100px;
     z-index: 1;
+    background: linear-gradient(135deg, #C9A84C, #E0C070);
+    color: var(--dark);
   }
 
   .pacote-header {
     padding: 40px 36px 28px;
+  }
+
+  .pacote-card:not(.destaque):not(.personalizado) .pacote-header {
     border-bottom: 1px solid rgba(169,27,44,0.1);
+  }
+
+  .pacote-card.destaque .pacote-header {
+    border-bottom: 1px solid rgba(201,168,76,0.3);
   }
 
   .pacote-tier {
@@ -516,7 +562,7 @@
 
   .price-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 300;
     color: var(--cream);
     line-height: 1;
@@ -587,7 +633,7 @@
 
   .pacote-clt-label {
     font-size: 11px;
-    color: var(--muted);
+    color: rgba(250,242,243,0.9);
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -597,7 +643,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 300;
-    color: rgba(250,242,243,0.4);
+    color: #E0C070;
     text-decoration: line-through;
   }
 
@@ -708,7 +754,7 @@
   }
 
   /* ── PASSOS ── */
-  .passos { background: var(--dark); }
+  .passos { background: #1C2028; }
 
   .passos-list {
     margin-top: 64px;
@@ -720,9 +766,9 @@
     position: absolute;
     left: 28px;
     top: 0;
-    bottom: 0;
+    bottom: 8%;
     width: 1px;
-    background: linear-gradient(to bottom, var(--red), transparent);
+    background: linear-gradient(to bottom, var(--red), transparent 92%);
   }
 
   .passo-item {
@@ -737,7 +783,7 @@
     height: 56px;
     border-radius: 50%;
     background: var(--dark-mid);
-    border: 1px solid rgba(169,27,44,0.3);
+    border: 1px solid rgba(169,27,44,0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -747,6 +793,24 @@
     color: var(--red);
     position: relative;
     z-index: 1;
+    transition: all 0.3s;
+  }
+
+  .passo-item:nth-child(4) .passo-dot {
+    background: #C9A84C;
+    border-color: #C9A84C;
+    color: var(--dark);
+    box-shadow: 0 0 20px rgba(201,168,76,0.3);
+  }
+
+  .passo-item:last-child .passo-dot {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #C9A84C, #E0C070);
+    border-color: transparent;
+    font-size: 24px;
+    color: var(--dark);
+    box-shadow: 0 0 28px rgba(201,168,76,0.35);
   }
 
   .passo-content {
@@ -770,7 +834,7 @@
 
   /* ── CTA FINAL ── */
   .cta-final {
-    background: linear-gradient(135deg, #2D1A1E, #1A1012);
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, #3A141A 0%, var(--dark) 70%);
     text-align: center;
     border-top: 1px solid rgba(169,27,44,0.15);
     padding: 120px 24px;
@@ -823,7 +887,7 @@
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    padding: 16px 32px;
+    padding: 20px 44px;
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.3s;
@@ -840,7 +904,7 @@
     color: var(--red-light);
     font-size: 14px;
     font-weight: 500;
-    padding: 16px 32px;
+    padding: 20px 44px;
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.3s;
@@ -859,7 +923,8 @@
     padding: 14px 28px;
     border-radius: 100px;
     font-size: 13px;
-    color: var(--muted);
+    color: rgba(250,242,243,0.5);
+    letter-spacing: 0.05em;
   }
 
   .garantia span { color: var(--red); }
@@ -869,12 +934,24 @@
     background: #0F0A0B;
     padding: 48px 24px;
     text-align: center;
-    border-top: 1px solid rgba(169,27,44,0.08);
+    position: relative;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
   }
 
   footer p {
     font-size: 13px;
     color: rgba(133,108,113,0.5);
+    position: relative;
+    z-index: 1;
   }
 
   footer strong { color: var(--red); }
@@ -1012,7 +1089,7 @@
         <h3>Presença Global</h3>
         <p>Do Norte ao Sul do Brasil e além-fronteiras. Hoje gerenciamos atendimentos para empresas no Brasil, nos Estados Unidos e na Europa — tudo 100% remoto e com a mesma excelência.</p>
       </div>
-      <div class="sobre-card">
+      <div class="sobre-card destaque-perfumaria">
         <div class="sobre-card-icon">🌸</div>
         <h3>Especialistas em Perfumaria</h3>
         <p>Nosso time compreende a linguagem sensorial das fragrâncias e traduz essa experiência em atendimento consultivo humanizado — aumentando conversões e fidelizando clientes pelo WhatsApp e Instagram.</p>
@@ -1026,24 +1103,24 @@
   <div class="container">
     <div class="stats-grid reveal">
       <div class="stat-item">
-        <div class="stat-num">+6</div>
+        <div class="stat-num gold">+6</div>
         <div class="stat-label">Anos de Mercado</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">+80</div>
+        <div class="stat-num gold">+80</div>
         <div class="stat-label">Clientes Atendidos</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">3</div>
+        <div class="stat-num light">3</div>
         <div class="stat-label">Continentes</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">100%</div>
+        <div class="stat-num light">100%</div>
         <div class="stat-label">Remoto & Digital</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ====== SERVIÇOS ====== -->
 <section class="servicos">
@@ -1132,7 +1209,7 @@
         </div>
         <div class="dif-icon">◆</div>
       </div>
-      <div class="dif-item">
+      <div class="dif-item destaque-dif">
         <div class="dif-num">03</div>
         <div class="dif-content">
           <h3>Conhecimento Específico no Nicho</h3>
@@ -1144,7 +1221,7 @@
         <div class="dif-num">04</div>
         <div class="dif-content">
           <h3>Economia Real e Mensurável</h3>
-          <p>Contratar a MOVARE é até 60% mais econômico do que um funcionário CLT — sem encargos, sem FGTS, sem provisões. Você tem 2 especialistas pelo custo de menos de 1 salário.</p>
+          <p>Contratar a MOVARE é <span class="destaque-num">até 60% mais econômico</span> do que um funcionário CLT — sem encargos, sem FGTS, sem provisões. Você tem 2 especialistas pelo custo de menos de 1 salário.</p>
         </div>
         <div class="dif-icon">◆</div>
       </div>
@@ -1380,7 +1457,7 @@
 </section>
 
 <footer>
-  <p><strong>MOVARE</strong> · Empresa de Assistência Virtual · @movare.br · 2026 · Todos os direitos reservados.</p>
+  <p><strong>MOVARE</strong> · Assessoria Remota para Perfumarias · @movare.br · 2026 · Todos os direitos reservados.</p>
 </footer>
 
 <script>
