@@ -506,8 +506,16 @@
     align-self: center;
   }
 
-  /* ── PACOTES (ESCURO AVERMELHADO) ── */
-  .pacotes { background: linear-gradient(180deg, #22171a, #1f1518); }
+  /* ── PACOTES (GELO/CREME) ── */
+  .pacotes { 
+    background: linear-gradient(180deg, #FDF9FA 0%, #F5EAEC 40%, #EDDFE1 100%);
+  }
+  
+  .pacotes .section-label { color: #A91B2C; }
+  .pacotes .section-label::before { background: #A91B2C; }
+  .pacotes .section-title { color: #1A1012; }
+  .pacotes .section-title em { color: #A91B2C; }
+  .pacotes .section-body { color: #3D2A2E; }
 
   .pacotes-grid {
     display: grid;
@@ -517,20 +525,22 @@
   }
 
   .pacote-card {
-    background: var(--dark-mid);
+    background: #FFFFFF;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(169,27,44,0.08);
+    border-radius: 8px;
   }
 
   .pacote-card:hover { transform: translateY(-4px); }
 
   .pacote-card.destaque {
-    background: #2D1A1E;
+    background: #FFF5F6;
     border: 1px solid rgba(169,27,44,0.3);
-    box-shadow: 0 8px 48px rgba(201,168,76,0.12);
+    box-shadow: 0 8px 48px rgba(169,27,44,0.08);
   }
 
   .pacote-card.personalizado {
@@ -550,7 +560,7 @@
     border-radius: 100px;
     z-index: 1;
     background: linear-gradient(135deg, #C9A84C, #E0C070);
-    color: var(--dark);
+    color: #1A1012;
   }
 
   .pacote-header {
@@ -562,14 +572,14 @@
   }
 
   .pacote-card.destaque .pacote-header {
-    border-bottom: 1px solid rgba(201,168,76,0.3);
+    border-bottom: 1px solid rgba(169,27,44,0.2);
   }
 
   .pacote-tier {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--red);
+    color: #A91B2C;
     margin-bottom: 12px;
   }
 
@@ -577,7 +587,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
     font-weight: 300;
-    color: var(--cream);
+    color: #1A1012;
     margin-bottom: 20px;
   }
 
@@ -589,29 +599,29 @@
 
   .price-currency {
     font-size: 14px;
-    color: var(--muted);
+    color: #6B555A;
   }
 
   .price-value {
     font-family: 'Cormorant Garamond', serif;
     font-size: 64px;
     font-weight: 300;
-    color: var(--cream);
+    color: #1A1012;
     line-height: 1;
   }
 
   .price-period {
     font-size: 13px;
-    color: var(--muted);
+    color: #6B555A;
   }
 
   .pacote-economia {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(169,27,44,0.1);
+    background: rgba(169,27,44,0.06);
     border: 1px solid rgba(169,27,44,0.2);
-    color: var(--red-light);
+    color: #A91B2C;
     font-size: 12px;
     padding: 6px 14px;
     border-radius: 100px;
@@ -627,7 +637,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #6B555A;
     margin-bottom: 20px;
   }
 
@@ -644,7 +654,7 @@
     align-items: flex-start;
     gap: 12px;
     font-size: 14px;
-    color: rgba(250,242,243,0.75);
+    color: #3D2A2E;
     line-height: 1.5;
   }
 
@@ -657,15 +667,16 @@
   }
 
   .pacote-clt {
-    background: rgba(0,0,0,0.3);
+    background: rgba(169,27,44,0.04);
     border-radius: 4px;
     padding: 16px 20px;
     margin-bottom: 28px;
+    border: 1px solid rgba(169,27,44,0.1);
   }
 
   .pacote-clt-label {
     font-size: 11px;
-    color: rgba(250,242,243,0.9);
+    color: #6B555A;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -675,7 +686,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 300;
-    color: #E0C070;
+    color: #A91B2C;
     text-decoration: line-through;
   }
 
@@ -688,7 +699,7 @@
     text-align: center;
     background: transparent;
     border: 1px solid rgba(169,27,44,0.4);
-    color: var(--red-light);
+    color: #A91B2C;
     font-size: 13px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -1277,7 +1288,7 @@
   </div>
 </section>
 
-<!-- ====== PACOTES (ESCURO AVERMELHADO) ====== -->
+<!-- ====== PACOTES (GELO/CREME) ====== -->
 <section class="pacotes" id="pacotes">
   <div class="container">
     <div class="reveal">
@@ -1412,7 +1423,7 @@
             <li>Tem demandas sazonais ou horários alternativos</li>
             <li>Busca integrar sistemas que já utiliza na sua perfumaria</li>
           </ul>
-          <p style="font-size:13px; color:rgba(250,242,243,0.55); line-height:1.8; margin-top:12px;">
+          <p style="font-size:13px; color:#6B555A; line-height:1.8; margin-top:12px;">
             Monte seu plano com a gente. Envie sua demanda e em até 24h você recebe uma proposta ajustada, sem compromisso.
           </p>
         </div>
